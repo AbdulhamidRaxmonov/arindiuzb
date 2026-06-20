@@ -1,0 +1,205 @@
+import 'package:flutter/material.dart';
+
+/// Lightweight self-contained localization (uz / ru / en).
+class AppLocalizations {
+  final Locale locale;
+  AppLocalizations(this.locale);
+
+  static AppLocalizations of(BuildContext context) =>
+      Localizations.of<AppLocalizations>(context, AppLocalizations)!;
+
+  static const supportedLocales = [Locale('uz'), Locale('ru'), Locale('en')];
+
+  static const LocalizationsDelegate<AppLocalizations> delegate =
+      _AppLocalizationsDelegate();
+
+  String t(String key) =>
+      _values[locale.languageCode]?[key] ?? _values['uz']![key] ?? key;
+
+  static const Map<String, Map<String, String>> _values = {
+    'uz': {
+      'app_name': 'Arindi',
+      'login': 'Kirish',
+      'phone': 'Telefon raqami',
+      'enter_phone': 'Telefon raqamingizni kiriting',
+      'send_code': 'Kod yuborish',
+      'verify': 'Tasdiqlash',
+      'otp_sent': 'Tasdiqlash kodi yuborildi',
+      'enter_code': 'Kodni kiriting',
+      'name': 'Ismingiz',
+      'home': 'Bosh sahifa',
+      'history': 'Tarix',
+      'profile': 'Profil',
+      'notifications': 'Bildirishnomalar',
+      'choose_category': 'Bo\'limni tanlang',
+      'pochoq': 'Po\'choq',
+      'botilka': 'Bo\'tilka',
+      'plasmassa': 'Plasmassa',
+      'maklatura': 'Maklatura',
+      'coming_soon': 'Tez orada bu bo\'lim ham ishga tushadi!',
+      'new_request': 'Yangi zayafka',
+      'weight_kg': 'Og\'irligi (kg)',
+      'address': 'Uy manzili',
+      'pick_on_map': 'Xaritadan tanlash',
+      'comment': 'Izoh (tarkibida nimalar bor)',
+      'photo': 'Holatidan rasm',
+      'add_photo': 'Rasm qo\'shish',
+      'take_away': 'Olib ketishsin',
+      'request_created': 'Zayafka qabul qilindi!',
+      'balance': 'Balans',
+      'withdraw': 'Pul yechish',
+      'amount': 'Summa',
+      'card_number': 'Karta raqami',
+      'card_holder': 'Karta egasi (ism familiya)',
+      'withdraw_btn': 'Yechish',
+      'close': 'Yopish',
+      'withdraw_pending': 'Tez orada admin tekshirib pul tashlab beriladi.',
+      'min_withdraw_note': 'Minimal yechish summasi: 15 000 so\'m',
+      'language': 'Tilni o\'zgartirish',
+      'about': 'Ilova haqida ma\'lumot',
+      'dark_mode': 'Tungi rejim',
+      'logout': 'Chiqish',
+      'status_pending': 'Yangi',
+      'status_accepted': 'Qabul qilingan',
+      'status_collected': 'Yakunlangan',
+      'status_verified': 'Tekshirildi',
+      'status_cancelled': 'Bekor qilingan',
+      'no_data': 'Ma\'lumot yo\'q',
+      'save': 'Saqlash',
+      'cancel': 'Bekor qilish',
+      'estimated': 'Taxminiy summa',
+      'about_text': 'Arindi — ho\'jaliklardan chiqindi (po\'choq, bo\'tilka, plasmassa, maklatura) yig\'ib olish va uni pulga aylantirish platformasi. Har bir kg uchun hisobingizga pul qo\'shiladi.',
+      'sum': 'so\'m',
+      'required': 'Majburiy maydon',
+      'mark_all_read': 'Hammasini o\'qildi',
+    },
+    'ru': {
+      'app_name': 'Arindi',
+      'login': 'Вход',
+      'phone': 'Номер телефона',
+      'enter_phone': 'Введите номер телефона',
+      'send_code': 'Отправить код',
+      'verify': 'Подтвердить',
+      'otp_sent': 'Код подтверждения отправлен',
+      'enter_code': 'Введите код',
+      'name': 'Ваше имя',
+      'home': 'Главная',
+      'history': 'История',
+      'profile': 'Профиль',
+      'notifications': 'Уведомления',
+      'choose_category': 'Выберите раздел',
+      'pochoq': 'Скорлупа',
+      'botilka': 'Бутылки',
+      'plasmassa': 'Пластик',
+      'maklatura': 'Макулатура',
+      'coming_soon': 'Этот раздел скоро заработает!',
+      'new_request': 'Новая заявка',
+      'weight_kg': 'Вес (кг)',
+      'address': 'Домашний адрес',
+      'pick_on_map': 'Выбрать на карте',
+      'comment': 'Комментарий (что внутри)',
+      'photo': 'Фото',
+      'add_photo': 'Добавить фото',
+      'take_away': 'Забрать',
+      'request_created': 'Заявка принята!',
+      'balance': 'Баланс',
+      'withdraw': 'Вывод средств',
+      'amount': 'Сумма',
+      'card_number': 'Номер карты',
+      'card_holder': 'Владелец карты (имя фамилия)',
+      'withdraw_btn': 'Вывести',
+      'close': 'Закрыть',
+      'withdraw_pending': 'Скоро администратор проверит и переведёт деньги.',
+      'min_withdraw_note': 'Минимальная сумма вывода: 15 000 сум',
+      'language': 'Изменить язык',
+      'about': 'О приложении',
+      'dark_mode': 'Тёмный режим',
+      'logout': 'Выход',
+      'status_pending': 'Новая',
+      'status_accepted': 'Принята',
+      'status_collected': 'Завершена',
+      'status_verified': 'Проверена',
+      'status_cancelled': 'Отменена',
+      'no_data': 'Нет данных',
+      'save': 'Сохранить',
+      'cancel': 'Отмена',
+      'estimated': 'Примерная сумма',
+      'about_text': 'Arindi — платформа по сбору отходов (скорлупа, бутылки, пластик, макулатура) и обмену их на деньги. За каждый кг на ваш счёт начисляются деньги.',
+      'sum': 'сум',
+      'required': 'Обязательное поле',
+      'mark_all_read': 'Прочитать все',
+    },
+    'en': {
+      'app_name': 'Arindi',
+      'login': 'Login',
+      'phone': 'Phone number',
+      'enter_phone': 'Enter your phone number',
+      'send_code': 'Send code',
+      'verify': 'Verify',
+      'otp_sent': 'Verification code sent',
+      'enter_code': 'Enter the code',
+      'name': 'Your name',
+      'home': 'Home',
+      'history': 'History',
+      'profile': 'Profile',
+      'notifications': 'Notifications',
+      'choose_category': 'Choose a category',
+      'pochoq': 'Shells',
+      'botilka': 'Bottles',
+      'plasmassa': 'Plastic',
+      'maklatura': 'Paper',
+      'coming_soon': 'This section will be available soon!',
+      'new_request': 'New request',
+      'weight_kg': 'Weight (kg)',
+      'address': 'Home address',
+      'pick_on_map': 'Pick on map',
+      'comment': 'Comment (what is inside)',
+      'photo': 'Photo',
+      'add_photo': 'Add photo',
+      'take_away': 'Request pickup',
+      'request_created': 'Request created!',
+      'balance': 'Balance',
+      'withdraw': 'Withdraw',
+      'amount': 'Amount',
+      'card_number': 'Card number',
+      'card_holder': 'Card holder (full name)',
+      'withdraw_btn': 'Withdraw',
+      'close': 'Close',
+      'withdraw_pending': 'The admin will verify and transfer the money soon.',
+      'min_withdraw_note': 'Minimum withdrawal: 15,000 so\'m',
+      'language': 'Change language',
+      'about': 'About the app',
+      'dark_mode': 'Dark mode',
+      'logout': 'Logout',
+      'status_pending': 'New',
+      'status_accepted': 'Accepted',
+      'status_collected': 'Collected',
+      'status_verified': 'Verified',
+      'status_cancelled': 'Cancelled',
+      'no_data': 'No data',
+      'save': 'Save',
+      'cancel': 'Cancel',
+      'estimated': 'Estimated amount',
+      'about_text': 'Arindi is a platform for collecting household waste (shells, bottles, plastic, paper) and turning it into money. You earn money per kg credited to your balance.',
+      'sum': 'so\'m',
+      'required': 'Required field',
+      'mark_all_read': 'Mark all read',
+    },
+  };
+}
+
+class _AppLocalizationsDelegate
+    extends LocalizationsDelegate<AppLocalizations> {
+  const _AppLocalizationsDelegate();
+
+  @override
+  bool isSupported(Locale locale) =>
+      ['uz', 'ru', 'en'].contains(locale.languageCode);
+
+  @override
+  Future<AppLocalizations> load(Locale locale) async =>
+      AppLocalizations(locale);
+
+  @override
+  bool shouldReload(_AppLocalizationsDelegate old) => false;
+}
