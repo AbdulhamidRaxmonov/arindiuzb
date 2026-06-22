@@ -1,0 +1,368 @@
+<!DOCTYPE html>
+<html lang="uz" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Arindi — Chiqindidan daromad</title>
+    <meta name="description" content="Arindi — ho'jaliklardan po'choq va boshqa chiqindilarni yig'ib olib, uni pulga aylantiruvchi platforma. Ilova orqali zayafka qoldiring, kuryer olib ketsin, balansingizga pul tushsin.">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: { sans: ['Inter', 'sans-serif'] },
+                    colors: {
+                        brand: {
+                            50: '#f0fdf4', 100: '#dcfce7', 200: '#bbf7d0',
+                            400: '#4ade80', 500: '#22c55e', 600: '#16a34a',
+                            700: '#15803d', 800: '#166534', 900: '#14532d',
+                        }
+                    },
+                    keyframes: {
+                        float: { '0%,100%': { transform: 'translateY(0)' }, '50%': { transform: 'translateY(-14px)' } },
+                        fadeUp: { '0%': { opacity: 0, transform: 'translateY(24px)' }, '100%': { opacity: 1, transform: 'translateY(0)' } },
+                    },
+                    animation: {
+                        float: 'float 5s ease-in-out infinite',
+                        fadeUp: 'fadeUp .7s ease-out both',
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        .gradient-text { background: linear-gradient(90deg,#16a34a,#22c55e,#4ade80); -webkit-background-clip: text; background-clip: text; color: transparent; }
+        .glass { backdrop-filter: blur(12px); background: rgba(255,255,255,.7); }
+        .blob { filter: blur(60px); }
+        html { scroll-padding-top: 80px; }
+    </style>
+</head>
+<body class="font-sans text-slate-800 bg-white antialiased">
+
+<!-- ======================= NAVBAR ======================= -->
+<header class="fixed top-0 inset-x-0 z-50">
+    <nav class="glass border-b border-white/40">
+        <div class="max-w-6xl mx-auto px-5 h-16 flex items-center justify-between">
+            <a href="#" class="flex items-center gap-2 font-extrabold text-xl">
+                <span class="grid place-items-center w-9 h-9 rounded-xl bg-brand-600 text-white text-lg">♻️</span>
+                <span>Arindi</span>
+            </a>
+            <div class="hidden md:flex items-center gap-8 text-sm font-medium text-slate-600">
+                <a href="#qanday" class="hover:text-brand-600 transition">Qanday ishlaydi</a>
+                <a href="#bolimlar" class="hover:text-brand-600 transition">Bo'limlar</a>
+                <a href="#kim-uchun" class="hover:text-brand-600 transition">Kim uchun</a>
+                <a href="#imkoniyat" class="hover:text-brand-600 transition">Imkoniyatlar</a>
+            </div>
+            <a href="#yuklab-olish" class="px-5 py-2.5 rounded-full bg-brand-600 hover:bg-brand-700 text-white text-sm font-semibold transition shadow-lg shadow-brand-600/25">
+                Boshlash
+            </a>
+        </div>
+    </nav>
+</header>
+
+<!-- ======================= HERO ======================= -->
+<section class="relative overflow-hidden pt-32 pb-20 md:pt-40 md:pb-28">
+    <div class="absolute -top-24 -left-24 w-96 h-96 bg-brand-200 rounded-full blob opacity-60"></div>
+    <div class="absolute top-40 -right-24 w-96 h-96 bg-brand-100 rounded-full blob opacity-70"></div>
+
+    <div class="relative max-w-6xl mx-auto px-5 grid md:grid-cols-2 gap-12 items-center">
+        <div class="animate-fadeUp">
+            <span class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-brand-50 text-brand-700 text-sm font-semibold ring-1 ring-brand-100">
+                🌱 Eko-startup • O'zbekiston
+            </span>
+            <h1 class="mt-6 text-4xl md:text-6xl font-black leading-[1.05] tracking-tight">
+                Chiqindingizni
+                <span class="gradient-text">pulga</span>
+                aylantiring
+            </h1>
+            <p class="mt-6 text-lg text-slate-600 leading-relaxed max-w-md">
+                Arindi — ho'jaliklardan <b>po'choq, bo'tilka, plasmassa va maklatura</b>ni
+                yig'ib olib, evaziga hisobingizga pul o'tkazadigan platforma.
+                Ilovada zayafka qoldiring — qolganini biz qilamiz.
+            </p>
+            <div class="mt-8 flex flex-wrap gap-4">
+                <a href="#yuklab-olish" class="px-7 py-3.5 rounded-full bg-brand-600 hover:bg-brand-700 text-white font-semibold transition shadow-xl shadow-brand-600/30">
+                    Ilovani olish
+                </a>
+                <a href="#qanday" class="px-7 py-3.5 rounded-full bg-white ring-1 ring-slate-200 hover:ring-brand-300 font-semibold transition">
+                    Qanday ishlaydi?
+                </a>
+            </div>
+            <div class="mt-10 flex items-center gap-8 text-sm">
+                <div>
+                    <div class="text-2xl font-extrabold text-brand-700">300 so'm</div>
+                    <div class="text-slate-500">har 1 kg uchun</div>
+                </div>
+                <div class="w-px h-10 bg-slate-200"></div>
+                <div>
+                    <div class="text-2xl font-extrabold text-brand-700">0 so'm</div>
+                    <div class="text-slate-500">olib ketish bepul</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Phone mockup -->
+        <div class="relative flex justify-center animate-fadeUp" style="animation-delay:.15s">
+            <div class="absolute inset-0 bg-gradient-to-tr from-brand-600 to-brand-400 rounded-[3rem] blur-2xl opacity-20 scale-90"></div>
+            <div class="relative w-[270px] h-[560px] rounded-[2.8rem] bg-slate-900 p-3 shadow-2xl animate-float">
+                <div class="w-full h-full rounded-[2.2rem] bg-gradient-to-b from-brand-50 to-white overflow-hidden flex flex-col">
+                    <div class="bg-gradient-to-br from-brand-600 to-brand-700 px-5 pt-8 pb-6 text-white rounded-b-3xl">
+                        <p class="text-xs text-brand-100">Assalomu alaykum,</p>
+                        <p class="font-bold text-lg">Dilshod 👋</p>
+                        <div class="mt-4 bg-white/15 rounded-2xl p-4">
+                            <p class="text-xs text-brand-100">Balans</p>
+                            <p class="text-2xl font-extrabold">42 000 so'm</p>
+                        </div>
+                    </div>
+                    <div class="p-4 grid grid-cols-2 gap-3 text-center">
+                        <div class="bg-white rounded-2xl p-4 shadow-sm ring-1 ring-slate-100">
+                            <div class="text-2xl">🥚</div>
+                            <p class="text-xs font-semibold mt-2">Po'choq</p>
+                            <p class="text-[10px] text-brand-600 font-bold">Faol</p>
+                        </div>
+                        <div class="bg-white rounded-2xl p-4 shadow-sm ring-1 ring-slate-100 opacity-60">
+                            <div class="text-2xl">🍶</div>
+                            <p class="text-xs font-semibold mt-2">Bo'tilka</p>
+                            <p class="text-[10px] text-slate-400 font-bold">Tez orada</p>
+                        </div>
+                        <div class="bg-white rounded-2xl p-4 shadow-sm ring-1 ring-slate-100 opacity-60">
+                            <div class="text-2xl">♻️</div>
+                            <p class="text-xs font-semibold mt-2">Plasmassa</p>
+                            <p class="text-[10px] text-slate-400 font-bold">Tez orada</p>
+                        </div>
+                        <div class="bg-white rounded-2xl p-4 shadow-sm ring-1 ring-slate-100 opacity-60">
+                            <div class="text-2xl">📦</div>
+                            <p class="text-xs font-semibold mt-2">Maklatura</p>
+                            <p class="text-[10px] text-slate-400 font-bold">Tez orada</p>
+                        </div>
+                    </div>
+                    <div class="mt-auto p-4">
+                        <div class="bg-brand-600 text-white text-center py-3 rounded-2xl text-sm font-semibold">
+                            🚚 Olib ketishsin
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ======================= QANDAY ISHLAYDI ======================= -->
+<section id="qanday" class="py-20 md:py-28 bg-slate-50">
+    <div class="max-w-6xl mx-auto px-5">
+        <div class="text-center max-w-2xl mx-auto">
+            <span class="text-brand-600 font-bold uppercase tracking-wider text-sm">Jarayon</span>
+            <h2 class="mt-3 text-3xl md:text-4xl font-black">Atigi 4 qadam</h2>
+            <p class="mt-4 text-slate-600">Chiqindini saqlab, ilovada zayafka qoldiring — pul hisobingizga tushadi.</p>
+        </div>
+
+        <div class="mt-14 grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
+            <!-- step -->
+            <div class="relative bg-white rounded-3xl p-7 ring-1 ring-slate-100 hover:shadow-xl hover:-translate-y-1 transition">
+                <div class="absolute -top-4 left-7 w-10 h-10 grid place-items-center rounded-full bg-brand-600 text-white font-bold">1</div>
+                <div class="text-4xl mt-4">📝</div>
+                <h3 class="mt-4 font-bold text-lg">Zayafka qoldiring</h3>
+                <p class="mt-2 text-sm text-slate-600">Og'irlik, manzil (xaritadan), izoh va rasm kiriting.</p>
+            </div>
+            <div class="relative bg-white rounded-3xl p-7 ring-1 ring-slate-100 hover:shadow-xl hover:-translate-y-1 transition">
+                <div class="absolute -top-4 left-7 w-10 h-10 grid place-items-center rounded-full bg-brand-600 text-white font-bold">2</div>
+                <div class="text-4xl mt-4">🚚</div>
+                <h3 class="mt-4 font-bold text-lg">Kuryer keladi</h3>
+                <p class="mt-2 text-sm text-slate-600">Eng yaqin kuryer zayafkani qabul qilib, manzilingizga boradi.</p>
+            </div>
+            <div class="relative bg-white rounded-3xl p-7 ring-1 ring-slate-100 hover:shadow-xl hover:-translate-y-1 transition">
+                <div class="absolute -top-4 left-7 w-10 h-10 grid place-items-center rounded-full bg-brand-600 text-white font-bold">3</div>
+                <div class="text-4xl mt-4">⚖️</div>
+                <h3 class="mt-4 font-bold text-lg">Tortiladi & tekshiriladi</h3>
+                <p class="mt-2 text-sm text-slate-600">Chiqindi qabul qilinib, og'irligi tasdiqlanadi.</p>
+            </div>
+            <div class="relative bg-white rounded-3xl p-7 ring-1 ring-slate-100 hover:shadow-xl hover:-translate-y-1 transition">
+                <div class="absolute -top-4 left-7 w-10 h-10 grid place-items-center rounded-full bg-brand-600 text-white font-bold">4</div>
+                <div class="text-4xl mt-4">💰</div>
+                <h3 class="mt-4 font-bold text-lg">Pul hisobingizda</h3>
+                <p class="mt-2 text-sm text-slate-600">Har kg uchun pul balansga qo'shiladi, kartaga yechib oling.</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ======================= BO'LIMLAR ======================= -->
+<section id="bolimlar" class="py-20 md:py-28">
+    <div class="max-w-6xl mx-auto px-5">
+        <div class="text-center max-w-2xl mx-auto">
+            <span class="text-brand-600 font-bold uppercase tracking-wider text-sm">Bo'limlar</span>
+            <h2 class="mt-3 text-3xl md:text-4xl font-black">Qabul qilinadigan chiqindilar</h2>
+            <p class="mt-4 text-slate-600">Hozircha <b>Po'choq</b> bo'limi ishlamoqda, qolganlari bosqichma-bosqich ishga tushadi.</p>
+        </div>
+
+        <div class="mt-14 grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
+            <div class="rounded-3xl p-7 bg-gradient-to-b from-amber-50 to-white ring-2 ring-amber-200 relative">
+                <span class="absolute top-5 right-5 text-[11px] font-bold px-2.5 py-1 rounded-full bg-brand-600 text-white">FAOL</span>
+                <div class="text-5xl">🥚</div>
+                <h3 class="mt-4 font-bold text-xl">Po'choq</h3>
+                <p class="mt-2 text-sm text-slate-600">Tuxum po'chog'i va organik chiqindilar.</p>
+            </div>
+            <div class="rounded-3xl p-7 bg-slate-50 ring-1 ring-slate-100 relative opacity-80">
+                <span class="absolute top-5 right-5 text-[11px] font-bold px-2.5 py-1 rounded-full bg-slate-300 text-slate-700">TEZ ORADA</span>
+                <div class="text-5xl grayscale">🍶</div>
+                <h3 class="mt-4 font-bold text-xl">Bo'tilka</h3>
+                <p class="mt-2 text-sm text-slate-600">Shisha va plastik idishlar.</p>
+            </div>
+            <div class="rounded-3xl p-7 bg-slate-50 ring-1 ring-slate-100 relative opacity-80">
+                <span class="absolute top-5 right-5 text-[11px] font-bold px-2.5 py-1 rounded-full bg-slate-300 text-slate-700">TEZ ORADA</span>
+                <div class="text-5xl grayscale">♻️</div>
+                <h3 class="mt-4 font-bold text-xl">Plasmassa</h3>
+                <p class="mt-2 text-sm text-slate-600">Plastik va polietilen mahsulotlar.</p>
+            </div>
+            <div class="rounded-3xl p-7 bg-slate-50 ring-1 ring-slate-100 relative opacity-80">
+                <span class="absolute top-5 right-5 text-[11px] font-bold px-2.5 py-1 rounded-full bg-slate-300 text-slate-700">TEZ ORADA</span>
+                <div class="text-5xl grayscale">📦</div>
+                <h3 class="mt-4 font-bold text-xl">Maklatura</h3>
+                <p class="mt-2 text-sm text-slate-600">Qog'oz va karton chiqindilari.</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ======================= KIM UCHUN ======================= -->
+<section id="kim-uchun" class="py-20 md:py-28 bg-slate-50">
+    <div class="max-w-6xl mx-auto px-5">
+        <div class="text-center max-w-2xl mx-auto">
+            <span class="text-brand-600 font-bold uppercase tracking-wider text-sm">Ekotizim</span>
+            <h2 class="mt-3 text-3xl md:text-4xl font-black">Platforma kim uchun?</h2>
+        </div>
+
+        <div class="mt-14 grid md:grid-cols-3 gap-6">
+            <!-- User app -->
+            <div class="bg-white rounded-3xl p-8 ring-1 ring-slate-100 hover:shadow-xl transition">
+                <div class="w-14 h-14 grid place-items-center rounded-2xl bg-brand-100 text-3xl">🏠</div>
+                <h3 class="mt-5 font-bold text-xl">Foydalanuvchi ilovasi</h3>
+                <p class="mt-2 text-sm text-slate-600">Uy xo'jaliklari uchun.</p>
+                <ul class="mt-5 space-y-2.5 text-sm text-slate-700">
+                    <li class="flex gap-2"><span class="text-brand-600">✓</span> Telefon orqali tez ro'yxatdan o'tish</li>
+                    <li class="flex gap-2"><span class="text-brand-600">✓</span> Xaritadan manzil tanlash</li>
+                    <li class="flex gap-2"><span class="text-brand-600">✓</span> Balans va pul yechish</li>
+                    <li class="flex gap-2"><span class="text-brand-600">✓</span> Bildirishnomalar</li>
+                </ul>
+            </div>
+            <!-- Courier app -->
+            <div class="bg-white rounded-3xl p-8 ring-1 ring-slate-100 hover:shadow-xl transition">
+                <div class="w-14 h-14 grid place-items-center rounded-2xl bg-sky-100 text-3xl">🚚</div>
+                <h3 class="mt-5 font-bold text-xl">Kuryer ilovasi</h3>
+                <p class="mt-2 text-sm text-slate-600">Olib ketuvchilar uchun.</p>
+                <ul class="mt-5 space-y-2.5 text-sm text-slate-700">
+                    <li class="flex gap-2"><span class="text-brand-600">✓</span> Zayafkalar ro'yxati</li>
+                    <li class="flex gap-2"><span class="text-brand-600">✓</span> Qabul qilish va yakunlash</li>
+                    <li class="flex gap-2"><span class="text-brand-600">✓</span> Qo'ng'iroq va xaritada yo'l</li>
+                    <li class="flex gap-2"><span class="text-brand-600">✓</span> Izoh qoldirish</li>
+                </ul>
+            </div>
+            <!-- Admin -->
+            <div class="bg-white rounded-3xl p-8 ring-1 ring-slate-100 hover:shadow-xl transition">
+                <div class="w-14 h-14 grid place-items-center rounded-2xl bg-violet-100 text-3xl">📊</div>
+                <h3 class="mt-5 font-bold text-xl">Admin panel</h3>
+                <p class="mt-2 text-sm text-slate-600">Boshqaruv uchun.</p>
+                <ul class="mt-5 space-y-2.5 text-sm text-slate-700">
+                    <li class="flex gap-2"><span class="text-brand-600">✓</span> Dashboard statistikasi</li>
+                    <li class="flex gap-2"><span class="text-brand-600">✓</span> Zayafkalarni tekshirish</li>
+                    <li class="flex gap-2"><span class="text-brand-600">✓</span> Pul yechishni boshqarish</li>
+                    <li class="flex gap-2"><span class="text-brand-600">✓</span> Kuryerlar nazorati</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ======================= IMKONIYATLAR ======================= -->
+<section id="imkoniyat" class="py-20 md:py-28">
+    <div class="max-w-6xl mx-auto px-5">
+        <div class="text-center max-w-2xl mx-auto">
+            <span class="text-brand-600 font-bold uppercase tracking-wider text-sm">Nega Arindi</span>
+            <h2 class="mt-3 text-3xl md:text-4xl font-black">Imkoniyatlar</h2>
+        </div>
+        <div class="mt-14 grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
+            <div class="p-6 rounded-2xl ring-1 ring-slate-100 hover:bg-brand-50/40 transition">
+                <div class="text-3xl">📍</div>
+                <h3 class="mt-3 font-bold">Google Map manzil</h3>
+                <p class="mt-1.5 text-sm text-slate-600">Manzilni xaritadan aniq belgilang.</p>
+            </div>
+            <div class="p-6 rounded-2xl ring-1 ring-slate-100 hover:bg-brand-50/40 transition">
+                <div class="text-3xl">💳</div>
+                <h3 class="mt-3 font-bold">Kartaga yechish</h3>
+                <p class="mt-1.5 text-sm text-slate-600">Balansingizni istalgan kartaga o'tkazing.</p>
+            </div>
+            <div class="p-6 rounded-2xl ring-1 ring-slate-100 hover:bg-brand-50/40 transition">
+                <div class="text-3xl">🌗</div>
+                <h3 class="mt-3 font-bold">Tungi rejim</h3>
+                <p class="mt-1.5 text-sm text-slate-600">Yorug' va tungi rejim qo'llab-quvvatlanadi.</p>
+            </div>
+            <div class="p-6 rounded-2xl ring-1 ring-slate-100 hover:bg-brand-50/40 transition">
+                <div class="text-3xl">🌐</div>
+                <h3 class="mt-3 font-bold">3 til</h3>
+                <p class="mt-1.5 text-sm text-slate-600">O'zbek, rus va ingliz tillari.</p>
+            </div>
+            <div class="p-6 rounded-2xl ring-1 ring-slate-100 hover:bg-brand-50/40 transition">
+                <div class="text-3xl">🔔</div>
+                <h3 class="mt-3 font-bold">Bildirishnomalar</h3>
+                <p class="mt-1.5 text-sm text-slate-600">To'lov va zayafka holati haqida xabar.</p>
+            </div>
+            <div class="p-6 rounded-2xl ring-1 ring-slate-100 hover:bg-brand-50/40 transition">
+                <div class="text-3xl">🌍</div>
+                <h3 class="mt-3 font-bold">Toza tabiat</h3>
+                <p class="mt-1.5 text-sm text-slate-600">Chiqindini qayta ishlash bilan ekologiyaga hissa.</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ======================= CTA / YUKLAB OLISH ======================= -->
+<section id="yuklab-olish" class="py-20 md:py-28">
+    <div class="max-w-5xl mx-auto px-5">
+        <div class="relative overflow-hidden rounded-[2.5rem] bg-gradient-to-br from-brand-600 to-brand-800 px-8 py-14 md:p-16 text-center text-white">
+            <div class="absolute -top-10 -right-10 w-52 h-52 bg-white/10 rounded-full blob"></div>
+            <div class="absolute -bottom-10 -left-10 w-52 h-52 bg-white/10 rounded-full blob"></div>
+            <div class="relative">
+                <h2 class="text-3xl md:text-4xl font-black">Bugun chiqindingizdan daromad qiling</h2>
+                <p class="mt-4 text-brand-50 max-w-xl mx-auto">
+                    Arindi ilovasini o'rnatib, birinchi zayafkangizni qoldiring.
+                    Bepul olib ketish, shaffof to'lov.
+                </p>
+                <div class="mt-8 flex flex-wrap justify-center gap-4">
+                    <a href="#" class="flex items-center gap-3 px-6 py-3.5 rounded-2xl bg-white text-slate-900 font-semibold hover:scale-105 transition">
+                        <span class="text-2xl">📱</span>
+                        <span class="text-left leading-tight"><span class="block text-[11px] text-slate-500">Yuklab oling</span>Google Play</span>
+                    </a>
+                    <a href="#" class="flex items-center gap-3 px-6 py-3.5 rounded-2xl bg-white/15 ring-1 ring-white/30 font-semibold hover:bg-white/25 transition">
+                        <span class="text-2xl"></span>
+                        <span class="text-left leading-tight"><span class="block text-[11px] text-brand-100">Yuklab oling</span>App Store</span>
+                    </a>
+                </div>
+                <p class="mt-6 text-xs text-brand-100">* Ilova tez orada do'konlarda paydo bo'ladi.</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ======================= FOOTER ======================= -->
+<footer class="border-t border-slate-100 py-12">
+    <div class="max-w-6xl mx-auto px-5 flex flex-col md:flex-row items-center justify-between gap-6">
+        <a href="#" class="flex items-center gap-2 font-extrabold text-lg">
+            <span class="grid place-items-center w-8 h-8 rounded-lg bg-brand-600 text-white">♻️</span>
+            Arindi
+        </a>
+        <p class="text-sm text-slate-500 text-center">
+            Chiqindidan daromad • Toza kelajak uchun
+        </p>
+        <div class="flex items-center gap-5 text-slate-400 text-xl">
+            <a href="#" class="hover:text-brand-600 transition" aria-label="Telegram">✈️</a>
+            <a href="#" class="hover:text-brand-600 transition" aria-label="Instagram">📷</a>
+            <a href="mailto:hello@arindi.uz" class="hover:text-brand-600 transition" aria-label="Email">✉️</a>
+        </div>
+    </div>
+    <p class="mt-8 text-center text-xs text-slate-400">© 2026 Arindi. Barcha huquqlar himoyalangan.</p>
+</footer>
+
+</body>
+</html>
